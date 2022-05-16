@@ -1,11 +1,14 @@
 package DateComponents;
 
 public class TheDate {
-    public String Date = "";
+    public String date = "";
+    public String enteredDate;
     public Year yearRef;
     public Month monthRef;
     public Day dayRef;
-    public TheDate(int[] dateComponents){
+    public TheDate(int[] dateComponents, String enteredDate){
+        this.enteredDate = enteredDate;
+    handleInputDate(dateComponents);
 
     }
     private void handleInputDate(int[] dateComponents){
@@ -13,8 +16,13 @@ public class TheDate {
          monthRef = new Month(dateComponents[1]);
          dayRef = new Day(dateComponents[2]);
     }
-    private void dateLogic(){
-        this.dayRef.dayValue++;
+    private void dateIncreaseLogic(){
+        int tempValue = this.dayRef.dayValue++;
+        if(Month.MONTHS_LENGTH[this.monthRef.monthValue] == tempValue ){
+            
+        }else{
+            this.dayRef.dayValue++;
+        }
     }
 
 }
