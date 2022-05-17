@@ -18,7 +18,7 @@ public class TheDate {
     }
     private void dateIncreaseLogic(){
         int tempValue = this.dayRef.dayValue++;
-        if(Month.MONTHS_LENGTH[this.monthRef.monthValue] == tempValue ){
+        if(Month.MONTHS_LENGTH[this.monthRef.monthValue - 1] == tempValue ){
             
         }else{
             this.dayRef.dayValue++;
